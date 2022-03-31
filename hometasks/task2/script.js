@@ -2,16 +2,16 @@
 
 // task 1
 let count = 59;
-if ( count <= 100 && count >= 90) {
-    console.log(`${count} баллов - оценка отлично`);
-}else if (count <= 89 && count >= 60) {
-    console.log(`${count} баллов - оценка хорошо`);
-}else if (count <= 59 && count >= 40) {
-    console.log(`${count} баллов - оценка удовлетворительно`);
-}else if (count <= 39 && count >= 0) {
-    console.log(`${count} баллов - попробуйте еще раз`);
-} else {
+if (count >= 100 && count <= 90) {
     console.log('не подкручивайте баллы')
+}else if (count <= 100 && count >= 90) {
+    console.log(`${count} баллов - оценка отлично`);
+}else if (count >= 60) {
+    console.log(`${count} баллов - оценка хорошо`);
+}else if (count >= 40) {
+    console.log(`${count} баллов - оценка удовлетворительно`);
+}else {
+    console.log(`${count} баллов - попробуйте еще раз`);
 }
 
 
@@ -69,7 +69,8 @@ while (num_task4 !== 0){
     if (num_task4 === random_num) {
         console.log('вы угадали');
         break;
-    } else if (num_task4 > random_num) {
+    }
+    if (num_task4 > random_num) {
         console.log('загаданное число меньше');
     } else if (num_task4 < random_num) {
         console.log('загаданное число больше');
@@ -88,22 +89,41 @@ if (num >= 25 && num <= 200){
 
 // task 6 не доделано
 
-// let userInput = prompt('введите число от 1 до 100');
-// let num_task6 = parseInt(userInput);
-// let random = 0;
-//
-// while (random !== num_task6){
-//     let question = prompt('введенное число больше 50?');
-//     if (question === 'да'){
-//         question = prompt('введенное число больше 75?');
-//         if (question === 'да'){
-//             question = 'нет';
-//             while (question !== 'да'){
-//                 random = Math.ceil(Math.random()*25 + 75);
-//                 question = prompt(`введенное число это ${random}?`)
-//             }
-//         }
-//     } else {
-//         question = prompt('введенное число меньше 25?')
-//     }
-// }
+let userInput = prompt('введите число от 1 до 100');
+let num_task6 = parseInt(userInput);
+let random = 0;
+
+while (random !== num_task6) {
+    let question = prompt('введенное число больше 50?');
+    if (question === 'да') {
+        question = prompt('введенное число больше 75?');
+        if (question === 'да') {
+            question = 'нет';
+            while (question !== 'да') {
+                random = Math.ceil(Math.random() * 25 + 75);
+                question = prompt(`введенное число это ${random}?`)
+            }
+        } else {
+            question = 'нет';
+            while (question !== 'да') {
+                random = Math.ceil(Math.random() * 25 + 50);
+                question = prompt(`введенное число это ${random}?`)
+            }
+        }
+    } else {
+        question = prompt('введенное число больше 25?');
+        if (question === 'да') {
+            question = 'нет';
+            while (question !== 'да') {
+                random = Math.ceil(Math.random() * 25 + 25);
+                question = prompt(`введенное число это ${random}?`)
+            }
+        } else {
+            while (question !== 'да') {
+                random = Math.ceil(Math.random() * 25);
+                question = prompt(`введенное число это ${random}?`)
+            }
+        }
+    }
+}
+console.log('скайнет победил');
