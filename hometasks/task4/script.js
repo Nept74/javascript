@@ -47,10 +47,16 @@ console.log(arr);
 
 let array = [];
 while (true){
-let newLine = prompt('введите что-нибудь');
-if (newLine == 0) break;
-array.push(newLine);
-console.log(array);
+    let newLine = prompt('введите что-нибудь');
+    if (newLine == 0){
+        break;
+    } else if (array.indexOf(newLine) !== -1){
+        console.log('Повтор');
+    } else {
+        array.push(newLine);
+        console.log(array);
+    }
+
 }
 console.log(array);
 
