@@ -4,13 +4,23 @@
 
 function range (start, end, step = 1){
     let rangeArray = [];
-    for (let i = start; i <= end; i= i + step){
-        console.log(i);
-        rangeArray.push(i);
+    if (start < end && step > 0) {
+        for (let i = start; i <= end; i = i + step){
+            console.log(i);
+            rangeArray.push(i);
+        }
+        return rangeArray;
+    } else if (start > end && step < 0) {
+        for (let i = start; i >= end; i = i + step){
+            console.log(i);
+            rangeArray.push(i);
+        }
+        return rangeArray;
+    } else {
+        return 'Данные введены некорректно'
     }
-    return rangeArray;
 }
-console.log(range(3,9,2));
+console.log(range(9,14,-2));
 
 // task 2
 
@@ -18,8 +28,7 @@ function checkSpam (text, ...spamWords){
     let array = text.split([' ']);
     console.log(array);
     console.log(spamWords);
-    let c = 0
-    let mark = 0
+    let c = 0;
     for (let i = 0, b = spamWords[0]; i < array.length; i++){
         b = spamWords[0];
         console.log('обнуляем');
@@ -28,15 +37,15 @@ function checkSpam (text, ...spamWords){
         }
     }
     if (c === 0){
-        return mark = 'оценка 5'
+        return 'оценка5'
     } else if (c > 0 && c < 2){
-        return mark = 'оценка 4'
+        return 'оценка 4'
     } else if (c > 2 && c < 4){
-        return mark = 'оценка 3'
+        return 'оценка 3'
     } else if (c > 4 && c < 6){
-        return mark = 'оценка 2'
+        return 'оценка 2'
     } else if (c > 6 && c < 8){
-        return mark = 'оценка 1'
+        return 'оценка 1'
     }
 }
 
