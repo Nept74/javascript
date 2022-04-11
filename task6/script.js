@@ -45,4 +45,9 @@ let temperatures = [
     [111, 313, 351, 314],
     [134, 111, 452],
 ];
-
+const MAX = (element) => element > 500
+for (let value of temperatures) {
+    if (value.some(MAX)){
+        console.log(`${value} температура превышена`)
+    }
+}
