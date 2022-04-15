@@ -5,12 +5,30 @@
 }
 
 .table{
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
 }
 th{
     background-color: blueviolet;
     padding: 15px;
     border: 2px black solid;
     text-transform: uppercase;
+    flex-grow: 1;
+}
+thead{
+    display: flex;
+    justify-content: space-around;
+}
+td{
+    background-color: #c0b1d0;
+    padding: 15px;
+    border: 2px black solid;
+    text-transform: uppercase;
+    flex-grow: 1;
+}
+tr{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+
 }

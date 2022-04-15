@@ -147,17 +147,22 @@ function generateTable(...array) {
         console.log(Object.keys(arrayItems[0]).length)
         let i = 0;
         let thead = document.createElement('thead')
+        let tbody = document.createElement('tbody')
             for (let elem of arrayItems) {
                 let size = Object.keys(elem).length
                 console.log(size)
                 let keys = Object.keys(elem);
                 console.log(keys[i])
-                let th = document.createElement('th');
-                th.innerText = keys[i];
-                th.classList.add('head')
-                console.log(th)
+
+                let row = document.createElement('tr')
+
                 if (i < size) {
+                    let th = document.createElement('th');
+                    th.innerText = keys[i];
+                    th.classList.add('head')
+                    console.log(th)
                     i++
+                    thead.append(th);
                 }
 
                 for (let j = 0; j < size; j++) {
@@ -169,8 +174,9 @@ function generateTable(...array) {
                     td.classList.add('body');
                     console.log(td);
 
-                    thead.append(th);
-                    table.append(td);
+                    row.append(td)
+                    tbody.append(row);
+                    table.append(tbody);
                     table.prepend(thead);
             }
             tableSection.append(table);
