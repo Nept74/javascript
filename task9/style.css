@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.table{
+    display: grid;
+    place-items: center;
+}
+th{
+    background-color: blueviolet;
+    padding: 15px;
+    border: 2px black solid;
+    text-transform: uppercase;
+}
