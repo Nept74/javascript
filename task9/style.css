@@ -4,9 +4,8 @@
     box-sizing: border-box;
 }
 
-.table{
-    display: flex;
-    flex-direction: column;
+table{
+    width: 100%;
 }
 th{
     background-color: blueviolet;
@@ -15,20 +14,13 @@ th{
     text-transform: uppercase;
     flex-grow: 1;
 }
-thead{
-    display: flex;
-    justify-content: space-around;
-}
 td{
     background-color: #c0b1d0;
     padding: 15px;
     border: 2px black solid;
     text-transform: uppercase;
-    flex-grow: 1;
-}
-tr{
     text-align: center;
-    display: flex;
-    justify-content: space-around;
-
+}
+.key td{
+    font-weight: bold;
 }

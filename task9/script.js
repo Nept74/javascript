@@ -139,48 +139,97 @@ let goods = [
     }
 ];
 
-function generateTable(...array) {
-    let tableSection = document.querySelector('.table-section');
+// function generateTable(...array) {
+//     let tableSection = document.querySelector('.table-section');
+//     let table = document.createElement('table');
+//     table.classList.add('table');
+//     for (let arrayItems of array) {
+//         console.log(Object.keys(arrayItems[0]).length)
+//         let i = 0;
+//         let thead = document.createElement('thead')
+//         let tbody = document.createElement('tbody')
+//             for (let elem of arrayItems) {
+//                 let size = Object.keys(elem).length
+//                 console.log(size)
+//                 let keys = Object.keys(elem);
+//                 console.log(keys[i])
+//
+//                 let row = document.createElement('tr')
+//
+//                 if (i < size) {
+//                     let th = document.createElement('th');
+//                     th.innerText = keys[i];
+//                     th.classList.add('head')
+//                     console.log(th)
+//                     i++
+//                     thead.append(th);
+//                 }
+//
+//                 for (let j = 0; j < size; j++) {
+//                     let values = Object.values(elem);
+//                     console.log(values[j])
+//
+//                     let td = document.createElement('td');
+//                     td.innerText = values[j];
+//                     td.classList.add('body');
+//                     console.log(td);
+//
+//                     row.append(td)
+//                     tbody.append(row);
+//                     table.append(tbody);
+//                     table.prepend(thead);
+//             }
+//             tableSection.append(table);
+//         }
+//     }
+// }
+// console.log(generateTable(articles))
+
+let tableSection = document.querySelector('.table-section');
+
+function generateTable(arr) {
     let table = document.createElement('table');
-    table.classList.add('table');
-    for (let arrayItems of array) {
-        console.log(Object.keys(arrayItems[0]).length)
-        let i = 0;
-        let thead = document.createElement('thead')
-        let tbody = document.createElement('tbody')
-            for (let elem of arrayItems) {
-                let size = Object.keys(elem).length
-                console.log(size)
-                let keys = Object.keys(elem);
-                console.log(keys[i])
+    let keys = Object.keys(arr[0]);
+    let firstRow = table.insertRow();
+    firstRow.classList.add('key');
 
-                let row = document.createElement('tr')
+    for (let key of keys){
+        let cell = firstRow.insertCell();
+        cell.innerText = key;
+    }
 
-                if (i < size) {
-                    let th = document.createElement('th');
-                    th.innerText = keys[i];
-                    th.classList.add('head')
-                    console.log(th)
-                    i++
-                    thead.append(th);
-                }
-
-                for (let j = 0; j < size; j++) {
-                    let values = Object.values(elem);
-                    console.log(values[j])
-
-                    let td = document.createElement('td');
-                    td.innerText = values[j];
-                    td.classList.add('body');
-                    console.log(td);
-
-                    row.append(td)
-                    tbody.append(row);
-                    table.append(tbody);
-                    table.prepend(thead);
-            }
-            tableSection.append(table);
+    for (let elem of arr){
+        let row = table.insertRow();
+        for (let prop in elem){
+            let cell = row.insertCell();
+            cell.innerText = elem[prop];
         }
     }
+    tableSection.append(table);
 }
-console.log(generateTable(articles))
+
+generateTable(goods);
+
+// вторая задача
+
+
+function generateField(n) {
+    if (n < 3) return;
+    let table = document.createElement('table');
+    for (let i = 0; i < n; i++){
+        let Row = table.insertRow();
+        for (let j = 0; j < n; j++){
+            let cell = Row.insertCell();
+        }
+    }
+
+    document.body.append(table);
+    // генерация поля n x n
+    // добавление поля в html
+
+    // let cells = получить все ячейки
+    // let randomcells = cells[рандомный индекс] - три раза
+    // randeomCell - добавить атрибут
+
+}
+generateField(4)
