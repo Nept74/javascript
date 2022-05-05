@@ -1,0 +1,10 @@
+section{
+    width: 800px;
+    border: black 2px solid;
+}
+.list{
+    text-align: center;
+}
+div{
+    background-color: bisque;
+}

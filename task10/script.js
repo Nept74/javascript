@@ -53,12 +53,25 @@ for (let x of Object.values(goods)) {
     count.classList.add("card__count-info");
     if (x.count > 0) {
         count.innerHTML =
-            `<button>-</button>
-             <span>0</span>
-             <button>+</button>`;
+            `<button class="minus">-</button>
+             <span class="count">0</span>
+             <button class="plus">+</button>`;
     } else {
         count.innerHTML = "<span>Товара нет в наличии</span>";
     }
     card.append(title, img, price, count);
     cardsSection.append(card);
 }
+let addCount = document.querySelectorAll('.card__count-info');
+
+addCount.forEach(function (elem){
+    elem.addEventListener('click', function (event){
+        console.log(event.target.innerHTML);
+        if (event.target.innerHTML === '+'){
+            document.querySelector(".count").innerHTML = Number(document.querySelector(".count").innerHTML) + 1;
+        }
+        if (event.target.innerHTML === '-'){
+            document.querySelector(".count").innerHTML = Number(document.querySelector(".count").innerHTML) - 1;
+        }
+    })
+})

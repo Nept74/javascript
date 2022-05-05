@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+section{
+    position: relative;
+    margin: auto;
+    background-color: lightsteelblue;
+    width: 900px;
+    padding: 20px;
+}
+#task-success {
+    position: absolute;
+    display: none;
+    right: 30px;
+    top: 22px;
+    color: green;
+}
+.header {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: larger;
+    display:block;
+    width: 225px;
+    height: 100%;
+    margin: 0 auto;
+}
+label {
+    display: block;
+    padding-top: 20px;
+}
+#task{
+    width: 60%;
+    margin-left: 19px;
+}
+#task-description{
+    width: 60%;
+    height: 100px;
+    margin-left: 20px;
+    max-height: 150px;
+    max-width: 700px;
+    margin-top: 20px;
+}
+.description-label{
+    float: left;
+}
+.submit{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

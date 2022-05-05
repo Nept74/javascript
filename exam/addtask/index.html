@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление задач</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="addtask-section">
+    <span class="header">Добавление задачи</span>
+    <span id="task-success">Задача была успешно добавлена</span>
+
+    <form name="add-task-form">
+        <label>Название задачи
+        <input name="task" id="task" type="text"
+               required minlength="5" maxlength="100">
+        </label>
+
+        <label class="description-label" for="task-description">Описание задачи</label>
+            <textarea name="description" id="task-description"></textarea>
+        <label>Срок выполнения задачи
+        <input name="time" id="task-time" type="date" min="today">
+        </label>
+        <button class="submit" type="submit">Добавить задачу</button>
+    </form>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
