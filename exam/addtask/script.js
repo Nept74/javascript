@@ -17,7 +17,8 @@ function addTask(event){
 
     tasks.push(taskInfo);
 
-    console.log(JSON.stringify(tasks))
+    console.log(JSON.stringify(tasks));
+    console.log(tasks.length);
     localStorage.setItem('tasks', JSON.stringify(tasks));
 
     let success = document.getElementById('task-success');

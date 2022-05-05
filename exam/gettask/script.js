@@ -24,6 +24,7 @@ let taskList = document.getElementById('tasks');
 taskList.addEventListener("click", pickTask);
 
 function pickTask(event) {
+    console.log(event);
     let chooseTask = event.target;
     console.log(chooseTask);
     let color = chooseTask.parentElement;
